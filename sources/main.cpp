@@ -4,6 +4,19 @@
 #include <helpers.hpp>
 #include <hash-function.hpp>
 
+hash_uint_t my_hash(const hash_key & hk)
+ {
+  const unsigned char * s = hk.first;
+  size_t l = hk.second;
+  hash_uint_t h = 0;
+
+  for (size_t i = 0; i < l; i++) {
+    h = (h * helpers::magie_3) + s[i] * 974;
+    h = helpers::perfect_shuffle(h);
+  }
+  return h;
+ }
+
 ////////////////////////////////////////
 //
 // hash_key.first : pointeur sur les données
@@ -68,7 +81,7 @@ int main(int argc, char * argv[])
       // commentaires dans hash-adapter.hpp)
       //
       if (std::getline(std::cin,ligne))
-       histo[ moins_pourrie(hash_key_adapter<std::string>::adapter(ligne)) % nb_bins ]++;
+       histo[ my_hash(hash_key_adapter<std::string>::adapter(ligne)) % nb_bins ]++;
      }
 
     // produit l'histogramme

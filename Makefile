@@ -48,7 +48,8 @@ release:
 	@echo "CXXFLAGS="$(RELEASE_FLAGS) > .flags
 
 $(NAME): $(OBJS)
-	$(CXX) $(OBJS) $(LDFLAGS) -o $(NAME) $(LIBS)
+	# $(CXX) $(OBJS) $(LDFLAGS) -o $(NAME) $(LIBS)
+	$(CXX) $(OBJS) $(LDFLAGS) -o $(NAME)
 
 clean:
 	@rm -v $(wildcard sources/*.o)
