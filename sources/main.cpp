@@ -11,7 +11,7 @@ hash_uint_t my_hash(const hash_key & hk)
   hash_uint_t h = 0;
 
   for (size_t i = 0; i < l; i++) {
-    h = (h * helpers::magie_3) + s[i] * 974;
+    h = (h * helpers::magie_3) + s[i] + 974;
     h = helpers::perfect_shuffle(h);
   }
   return h;

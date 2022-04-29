@@ -21,7 +21,7 @@ INCLUDES=-I. -I./includes/ -I/usr/include/boost/
 
 WARNINGS=-Wall -Wextra -Wfatal-errors -Wno-unused-function
 
-LANGUAGE_FLAGS=-std=c++17
+LANGUAGE_FLAGS=-std=c++17 -stdlib=libc++
 COMMON_FLAGS=$(LANGUAGE_FLAGS) $(WARNINGS) $(DEFINES) $(INCLUDES)
 RELEASE_FLAGS= -O3 -fwhole-program -flto $(COMMON_FLAGS)
 DEBUG_FLAGS= -O0 -g3 $(COMMON_FLAGS)
