@@ -1,6 +1,11 @@
 # Myhash
+We had to create an hash function.
+See Enonce.pdf
+
+### Score
+80 %
 
 
 ## On Mac 🧑‍💻
 
-Un comment ligne 52: '# $(CXX) $(OBJS) $(LDFLAGS) -o $(NAME)'
+Uncomment ligne 52: '# $(CXX) $(OBJS) $(LDFLAGS) -o $(NAME)'
